@@ -1,5 +1,6 @@
+from datetime import time
+import time
 import pandas as pd
-import json
 from dotenv import load_dotenv
 import requests
 import os
@@ -14,43 +15,52 @@ url = os.getenv("API_URL")
 pipelineLogger.info("Starting retail ETL data extraction...")
 def extractCSVData(data):
     pipelineLogger.info(f"Starting CSV extraction: '{data}'")
+    start = time.time()
     try:
         df = pd.read_csv(data)
-        pipelineLogger.info(f"Rows extracted from '{data}' is {len(df)}")
+        diff = (time.time() - start)
+        pipelineLogger.info(f"Rows extracted from '{data}' is {len(df)} - {diff} seconds")
         return df
     except Exception as e:
         errorLogger.error(f"Extraction failed '{data}': {e}")
-        return None
+        return pd.DataFrame()
 
 def extractJSONData(data):
     pipelineLogger.info(f"Starting JSON data extraction: '{data}'")
+    start = time.time()
     try:
         df = pd.read_json(data)
-        pipelineLogger.info(f"Rows extracted from '{data}' is {len(df)}")
+        diff = (time.time() - start)
+        pipelineLogger.info(f"Rows extracted from '{data}' is {len(df)} - {diff} seconds")
         return df
     except Exception as e:
         errorLogger.error(f"Extraction failed '{data}': {e}")
-        return None
+        return pd.DataFrame()
 
 def extractAPIData(url):
+    start = time.time()
     try:
         response = requests.get(url)
         if response.status_code == 200:
             pipelineLogger.info(f"Extracting data from API, status code: {response.status_code}")
-            return response.json()
+            res = response.json()
+            resDf = pd.json_normalize(res)
+            diff = (time.time() - start)
+            pipelineLogger.info(f"Rows extracted from '{url}' is {len(resDf)} - {diff} seconds")
+            return resDf
         else:
             errorLogger.error(f"Error getting data from API, status code: {response.status_code}")
             return None
     except Exception as e:
         errorLogger.error(f"Exception thrown: {e}")
-        return None
+        return pd.DataFrame()
 
 def extractAllData():
     pipelineLogger.info(f"Starting data extraction...")
     return {
-        "Products": extractCSVData('data/products.csv'),
-        "Sales": extractCSVData('data/sales.csv'),
-        "Stores": extractCSVData('data/stores.csv'),
-        "Customers": extractJSONData('data/customers.json'),
-        "API Data": extractAPIData(url)
+        "products": extractCSVData('data/products.csv'),
+        "sales": extractCSVData('data/sales.csv'),
+        "stores": extractCSVData('data/stores.csv'),
+        "customers": extractJSONData('data/customers.json'),
+        "apiData": extractAPIData(url)
     }

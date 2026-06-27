@@ -1,28 +1,22 @@
-2026-06-20 11:13:40,155 - pipeline - INFO - Starting data extraction...
-2026-06-20 11:13:40,155 - pipeline - INFO - Starting CSV extraction: '../data/products.csv'
-2026-06-20 11:13:40,156 - pipeline - INFO - Starting CSV extraction: '../data/sales.csv'
-2026-06-20 11:13:40,156 - pipeline - INFO - Starting CSV extraction: '../data/stores.csv'
-2026-06-20 11:13:40,156 - pipeline - INFO - Starting JSON data extraction: '../data/customers.json'
-2026-06-20 11:13:42,115 - pipeline - INFO - Extracting data from API, status code: 200
-2026-06-20 11:14:27,865 - pipeline - INFO - Starting data extraction...
-2026-06-20 11:14:27,865 - pipeline - INFO - Starting CSV extraction: '../data/products.csv'
-2026-06-20 11:14:27,865 - pipeline - INFO - Starting CSV extraction: '../data/sales.csv'
-2026-06-20 11:14:27,871 - pipeline - INFO - Starting CSV extraction: '../data/stores.csv'
-2026-06-20 11:14:27,871 - pipeline - INFO - Starting JSON data extraction: '../data/customers.json'
-2026-06-20 11:14:28,742 - pipeline - INFO - Extracting data from API, status code: 200
-2026-06-20 11:16:23,833 - pipeline - INFO - Starting data extraction...
-2026-06-20 11:16:23,833 - pipeline - INFO - Starting CSV extraction: '../data/products.csv'
-2026-06-20 11:16:23,833 - pipeline - INFO - Starting CSV extraction: '../data/sales.csv'
-2026-06-20 11:16:23,834 - pipeline - INFO - Starting CSV extraction: '../data/stores.csv'
-2026-06-20 11:16:23,834 - pipeline - INFO - Starting JSON data extraction: '../data/customers.json'
-2026-06-20 11:16:24,762 - pipeline - INFO - Extracting data from API, status code: 200
-2026-06-20 11:37:01,085 - pipeline - INFO - Starting data extraction...
-2026-06-20 11:37:01,085 - pipeline - INFO - Starting CSV extraction: 'data/products.csv'
-2026-06-20 11:37:01,133 - pipeline - INFO - Rows extracted from 'data/products.csv' is 100
-2026-06-20 11:37:01,133 - pipeline - INFO - Starting CSV extraction: 'data/sales.csv'
-2026-06-20 11:37:01,256 - pipeline - INFO - Rows extracted from 'data/sales.csv' is 10050
-2026-06-20 11:37:01,260 - pipeline - INFO - Starting CSV extraction: 'data/stores.csv'
-2026-06-20 11:37:01,261 - pipeline - INFO - Rows extracted from 'data/stores.csv' is 5
-2026-06-20 11:37:01,261 - pipeline - INFO - Starting JSON data extraction: 'data/customers.json'
-2026-06-20 11:37:01,267 - pipeline - INFO - Rows extracted from 'data/customers.json' is 2000
-2026-06-20 11:37:01,973 - pipeline - INFO - Extracting data from API, status code: 200
+2026-06-25 07:17:07,300 - pipeline - INFO - Starting data extraction...
+2026-06-25 07:17:07,300 - pipeline - INFO - Starting CSV extraction: 'data/products.csv'
+2026-06-25 07:17:07,306 - pipeline - INFO - Rows extracted from 'data/products.csv' is 100
+2026-06-25 07:17:07,306 - pipeline - INFO - Starting CSV extraction: 'data/sales.csv'
+2026-06-25 07:17:07,314 - pipeline - INFO - Rows extracted from 'data/sales.csv' is 10050
+2026-06-25 07:17:07,314 - pipeline - INFO - Starting CSV extraction: 'data/stores.csv'
+2026-06-25 07:17:07,315 - pipeline - INFO - Rows extracted from 'data/stores.csv' is 5
+2026-06-25 07:17:07,315 - pipeline - INFO - Starting JSON data extraction: 'data/customers.json'
+2026-06-25 07:17:07,323 - pipeline - INFO - Rows extracted from 'data/customers.json' is 2000
+2026-06-25 07:17:08,316 - pipeline - INFO - Extracting data from API, status code: 200
+2026-06-25 07:17:08,317 - pipeline - INFO - Rows extracted from 'https://fakestoreapi.com/users' is 10
+2026-06-25 07:17:08,331 - pipeline - INFO - The number of duplicates record removed: 0
+2026-06-25 07:17:08,346 - pipeline - INFO - The number of duplicates record removed: 50
+2026-06-25 07:17:08,347 - pipeline - INFO - The number of duplicates record removed: 0
+2026-06-25 07:17:08,350 - pipeline - INFO - The number of duplicates record removed: 0
+2026-06-25 07:17:08,352 - pipeline - INFO - The number of duplicates record removed: 0
+2026-06-25 07:17:08,352 - pipeline - INFO - Data transformation started...
+2026-06-25 07:17:08,359 - pipeline - INFO - The number of duplicates record removed: 0
+2026-06-25 07:17:08,364 - pipeline - INFO - The number of duplicates record removed: 48
+2026-06-25 07:17:08,364 - pipeline - INFO - The number of duplicates record removed: 0
+2026-06-25 07:17:08,365 - pipeline - INFO - The number of duplicates record removed: 0
+2026-06-25 07:17:08,366 - pipeline - INFO - The number of duplicates record removed: 0

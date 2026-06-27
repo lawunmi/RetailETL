@@ -1,6 +1,7 @@
 import logging
 
 from scripts.extract import extractAllData
+from scripts.transform import dataTransformation
 
 logger = logging.getLogger(__name__)
 
@@ -15,7 +16,7 @@ def logSetup(pipelineLog, errorLog):
 
     errorHandler = logging.FileHandler(errorLog, mode='w')
     errorHandler.setFormatter(formatter)
-    error = logging.getLogger('error')
+    error = logging.getLogger('errors')
     error.setLevel(logging.ERROR)
     error.addHandler(errorHandler)
 
@@ -25,5 +26,10 @@ if __name__ == "__main__":
 
 def pipeline():
     data = extractAllData()
+    if not data:  # if data == None
+        logging.error("No data found")
+        exit()
+
+    transformedData = dataTransformation(data)
 
 pipeline()
